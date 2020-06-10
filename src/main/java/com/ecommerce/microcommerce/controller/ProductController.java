@@ -43,4 +43,10 @@ public class ProductController {
 
         return ResponseEntity.created(location).build();
     }
+
+    @GetMapping(value="test/Produits/{PrixLimit}")
+    public  List<Product> trouverProduit(@PathVariable int PrixLimit){
+        return productDao.chercherUnProduitCher(PrixLimit);
+    }
+
 }
