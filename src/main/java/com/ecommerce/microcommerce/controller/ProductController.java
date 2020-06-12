@@ -30,7 +30,7 @@ public class ProductController {
     public Product afficherUnProduit(@PathVariable int id) throws ProduitIntrouvableException {
         Product produit = productDao.findById(id);
 
-        if(produit==null) throw new ProduitIntrouvableException();
+        if(produit == null) throw new ProduitIntrouvableException("le produit avec l'id " + id + " n'existe pas");
 
         return produit;
     }
